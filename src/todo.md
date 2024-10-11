@@ -22,3 +22,15 @@
   - App 에서 전달 받은 결과 값을 mathUtil 사용해서 포맷팅
 - for 문 돌려서 테이블 데이터 새로 생성
 
+### | 24.10.11 수정한 방법
+
+- 상태가 바뀌는 부분이 result 만 있는 것 같음.
+- 그럼 result data 상태를 App 에서 관리 하는게 맞을 것 같음.
+- Calculator 할 일 : input 값 App 에 전달
+- App 할 일 : mathUtil 사용해서 계산한 결과 Result 에 전달
+- Result 할 일 : mathUtil 사용해서 포맷팅 한 값 테이블에 바인딩
+
+
+- 생각해보니...
+- input data 도 상태로 관리해서 값이 바뀌면 
+App 에서 mathUtil 의 계산 함수 호출 되도록 해야겠음.
