@@ -1,16 +1,20 @@
 export default function Calculator({ inputValue, onChangeInput }) {
-  const {initInv, annuInv, expRtn, duration} = inputValue;
+  const {initialInvestment, annualInvestment, expectedReturn, duration} = inputValue;
 
   return (
     <div id="user-input">
-      <label htmlFor="input1">INITIAL INVESTMENT</label>
-      <input type="number" id="initInv" defaultValue={initInv} onChange={onChangeInput}/>
-      <label htmlFor="input2">ANNUAL INVESTMENT</label>
-      <input type="number" id="annuInv" defaultValue={annuInv} onChange={onChangeInput}/>
-      <label htmlFor="input3">EXPECTED RETURN</label>
-      <input type="number" id="expRtn" defaultValue={expRtn} onChange={onChangeInput}/>
-      <label htmlFor="input4">DURATION</label>
-      <input type="number" id="duration" defaultValue={duration} onChange={onChangeInput}/>
+      <label htmlFor="initialInvestment">INITIAL INVESTMENT</label>
+      <input type="number" id="initialInvestment" name="initialInvestment"
+             defaultValue={initialInvestment} onChange={onChangeInput}/>
+      <label htmlFor="annualInvestment">ANNUAL INVESTMENT</label>
+      <input type="number" id="annualInvestment" name="annualInvestment"
+             defaultValue={annualInvestment} onChange={onChangeInput}/>
+      <label htmlFor="expectedReturn">EXPECTED RETURN</label>
+      <input type="number" id="expectedReturn" name="expectedReturn"
+             defaultValue={expectedReturn} onChange={onChangeInput}/>
+      <label htmlFor="duration">DURATION</label>
+      <input type="number" id="duration" name="duration"
+             defaultValue={duration} onChange={onChangeInput}/>
     </div>
   );
 }

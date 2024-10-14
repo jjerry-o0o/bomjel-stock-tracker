@@ -1,13 +1,15 @@
-export default function Result() {
+export default function Result({resultData}) {
+  const {year, interest, valueEndOfYear, annualInvestment} = resultData;
+
   return (
     <table id="result">
       <thead>
       <tr>
-        <th>Year</th>
-        <th>Investment Value</th>
-        <th>Interest(Year)</th>
-        <th>Total Interest</th>
-        <th>Invested Capital</th>
+        <th>Year</th> <!--year-->
+        <th>Investment Value</th> <!--valueEndOfYear-->
+        <th>Interest(Year)</th> <!--interest-->
+        <th>Total Interest</th> <!--year-->
+        <th>Invested Capital</th> <!--year-->
       </tr>
       </thead>
       <tbody>
