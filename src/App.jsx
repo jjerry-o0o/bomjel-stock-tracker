@@ -14,16 +14,13 @@ const initInputData = {
 function App() {
   const [inputData, setInputData] = useState(initInputData);
   const deriveResultData = mathUtil.calculateInvestmentResults(inputData);
-  // console.log("인풋 : "+JSON.stringify(inputData));
-  // console.log("결과 : "+JSON.stringify(deriveResultData));
 
   function deriveInputData() {
     const {name, value} = event.target;
-    console.log("target : " + name + " | targetValue : " + value);
 
     setInputData((prevInputData) => ({
       ...prevInputData,
-      [name] : value
+      [name] : parseInt(value)
   }));
   }
 
