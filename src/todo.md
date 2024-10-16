@@ -64,5 +64,23 @@ App 에서 mathUtil 의 계산 함수 호출 되도록 해야겠음.
 중복되지 않는 값을 갖고 있는 year 을 key로 사용함
 > Index(tdIdx)를 따로 생성해서 key 에 대입했었는데, year 로 수정 
 
-- 강의 : round() 사용 안하고, formatter.format() 만 사용
+- 강의 : Math.round() 사용 안하고, formatter.format() 만 사용
 > formatter.format() 가 반올림도 해주는지 몰랐음. 수정함
+
+- 강의 : 테이블 내용 중 Total Interest 값을 아래 수식으로 구함.
+```js
+const initInvest =
+        resultData[0].valueEndOfYear -
+        resultData[0].interest -
+        resultData[0].annualInvestment;
+
+const totalInterest =
+        tdData.valueEndOfYear -
+        tdData.annualInvestment * tdData.year -
+        initInvest;
+```
+> 나는 totalInterest 를 전역 변수로 만들어 놓고, 각 row의 interest 값을 누적해나갔음.
+> 내 방법이 더 직관적인 것 같아서 수정 안함.
+
+- 강의 : 잠재적인 문제 중에 하나로 duration 의 값에 음수 또는 0 이 입력 되면 에러가 나오는 부분을 언급.
+> 이 에러를 예방하고자 강의와 동일하게 inputIsValid 라는 변수로 duration 의 값에 대한 유효성 체크를 할 수 있게 수정

@@ -4,15 +4,17 @@ import Result from "./components/Result.jsx";
 import * as mathUtil from "./util/investment.js";
 
 const initInputData = {
-  initialInvestment : 0,
-  annualInvestment : 0,
-  expectedReturn : 0,
-  duration : 0
+  initialInvestment : 15000,
+  annualInvestment : 1200,
+  expectedReturn : 6,
+  duration : 10
 }
 
 function App() {
   const [inputData, setInputData] = useState(initInputData);
   const deriveResultData = mathUtil.calculateInvestmentResults(inputData);
+
+  const inputIsValid = inputData.duration >= 1;
 
   function deriveInputData() {
     const {name, value} = event.target;
@@ -31,9 +33,10 @@ function App() {
         inputValue={inputData}
         onChangeInput={deriveInputData}
       />
-      <Result
-        resultData={deriveResultData}
-      />
+      {inputIsValid ? (<Result resultData={deriveResultData} />
+      ) : (<p className="center">DURATION 의 값은 1 이상만 입력 가능합니다.</p>
+      )}
+
     </>
   )
 }
