@@ -20,17 +20,17 @@ export default function Result({resultData}) {
       </tr>
       </thead>
       <tbody>
-      {resultData.map((tdData, tdIdx) => {
+      {resultData.map((tdData) => {
         totalInterest += tdData.interest;
         const investedCapital = tdData.valueEndOfYear - totalInterest;
 
         return (
-          <tr key={tdIdx}>
+          <tr key={tdData.year}>
             <td>{tdData.year}</td>
-            <td>{mathUtil.formatter.format(Math.round(tdData.valueEndOfYear))}</td>
-            <td>{mathUtil.formatter.format(Math.round(tdData.interest))}</td>
-            <td>{mathUtil.formatter.format(Math.round(totalInterest))}</td>
-            <td>{mathUtil.formatter.format(Math.round(investedCapital))}</td>
+            <td>{mathUtil.formatter.format(tdData.valueEndOfYear)}</td>
+            <td>{mathUtil.formatter.format(tdData.interest)}</td>
+            <td>{mathUtil.formatter.format(totalInterest)}</td>
+            <td>{mathUtil.formatter.format(investedCapital)}</td>
           </tr>
         );
       })}

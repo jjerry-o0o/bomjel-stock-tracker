@@ -1,5 +1,4 @@
 import { useState } from "react";
-import LOGO from "./assets/bomjel_logo.png";
 import Calculator from "./components/Calculator.jsx";
 import Result from "./components/Result.jsx";
 import * as mathUtil from "./util/investment.js";
@@ -26,10 +25,7 @@ function App() {
 
   return (
     <>
-      <header>
-        <img src={LOGO} alt="logo_Img"/>
-        <h1>B&J Stock Tracker</h1>
-      </header>
+
 
       <Calculator
         inputValue={inputData}
